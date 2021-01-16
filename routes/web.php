@@ -14,7 +14,11 @@ use App\Http\Controllers\PostController;
 */
 
 Route::get('/posts', [PostController::class, 'index'])->name('posts');
+Route::get('/posts/{id}', [PostController::class, 'getOne']);
 Route::post('/posts', [PostController::class, 'store']);
+Route::put('/posts/{id}', [PostController::class, 'update']);
+Route::delete('/posts/{id}', [PostController::class, 'delete']);
+
 Route::get('/', function () {
     return view('welcome');
 });

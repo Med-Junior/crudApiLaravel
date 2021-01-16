@@ -1,21 +1,12 @@
 @extends('welcome')
 @section('body')
-<form action="{{ route('posts') }}" method="post">
-    @csrf
-    <div>
-        <label for="body" class="sr-only">Body</label>
-        <br>
-        <textarea name="body" id="body" cols="30" rows="4"  placeholder="Post something!"></textarea>
-
-        @error('body')
-            <div>
-                {{ $message }}
-            </div>
-        @enderror
-    </div>
-
-    <div>
-        <button type="submit" >Post</button>
-    </div>
-</form>
+INDEX
+<form action="{{route('posts_api') }}" method="post">
+    {{csrf_field() }}
+    <input type="hidden" name="user" value="1" >
+    <input type="hidden" name="body" value="1" >
+    <input type="hidden" name="imgUrl" value="1" >
+    <input type="hidden" name="imgName" value="1" >
+    <button type="submit" name="submit" class="btn btn-outline-danger">Delete</button>
+    </form>
 @endsection
